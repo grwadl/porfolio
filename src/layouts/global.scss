@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap");
+
+:root {
+  --cursive: "Pacifico", cursive;
+  --poppins: "Poppins", sans-serif;
+
+  --gray: #1e293b;
+  --purple: #7477ff;
+  --blue: #0f172a;
+}
+
+.padded-section {
+  padding-left: 100px;
+  padding-right: 100px;
+  max-width: 1235px;
+  margin: 0 auto;
+}

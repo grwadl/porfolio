@@ -1,0 +1,11 @@
+---
+const navLinks: Array<string> = ["About", "Projects", "Contact"];
+---
+
+<header class="header w-full bg-blue">
+  <nav
+    class="header__navigation flex justify-end padded-section text-white lg:py-5 lg:gap-x-11"
+  >
+    {navLinks.map((link) => <a href="#">{link}</a>)}
+  </nav>
+</header>
