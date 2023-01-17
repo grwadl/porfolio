@@ -11,6 +11,12 @@
   --blue: #0f172a;
 }
 
+body.nav-opened {
+  @include media-max(xs) {
+    overflow-y: hidden;
+  }
+}
+
 .padded-section {
   max-width: 1335px;
   margin: 0 auto;
