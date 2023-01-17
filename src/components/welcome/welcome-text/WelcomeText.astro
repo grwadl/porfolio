@@ -1,4 +1,7 @@
 ---
+import Button from "../../buttons/Button.astro";
+import AnimatedOnScroll from "../../observer/AnimatedOnScroll.astro";
+
 type Props = {
   className?: string;
 };
@@ -6,19 +9,31 @@ type Props = {
 const { className } = Astro.props as Props;
 ---
 
-<h1 class:list={["main__welcome-section-text text-white", className]}>
-  <span class="main__welcome-section-text-line invisible animated animated-1"
-    >Hi,</span
-  >
-  <br />
-  <span class="main__welcome-section-text-line invisible animated-2"
-    >I am <span class="text-purple">V</span>adym,</span
-  >
-  <br />
-  <span class="main__welcome-section-text-line invisible animated-3"
-    >Web developer</span
-  >
-</h1>
+<div class:list={[className]}>
+  <h1 class="main__welcome-section-text text-white">
+    <span class="main__welcome-section-text-line invisible animated animated-1"
+      >Hi,</span
+    >
+    <br />
+    <span class="main__welcome-section-text-line invisible animated-2"
+      >I am <span class="text-purple">V</span>adym,</span
+    >
+    <br />
+    <span class="main__welcome-section-text-line invisible animated-3"
+      >Web developer</span
+    >
+  </h1>
+
+  <AnimatedOnScroll class="main__welcome-section-below mt-10">
+    <div class="main__welcome-section-below-anim-container">
+      <span
+        class="main__welcome-section-below-position block text-lg text-light-gray mb-4"
+        >Fullstack JS Developer (React, Express, Typescript)</span
+      >
+      <Button class="py-5 px-10 text-lg">See projects</Button>
+    </div>
+  </AnimatedOnScroll>
+</div>
 
 <style lang="scss">
   @import "./welcome-text.scss";

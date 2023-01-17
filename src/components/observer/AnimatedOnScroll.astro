@@ -1,0 +1,9 @@
+---
+type Props = astroHTML.JSX.HTMLAttributes;
+
+const props = Astro.props as Props;
+---
+
+<div data-aos {...props}>
+  <slot />
+</div>
