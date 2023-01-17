@@ -1,0 +1,46 @@
+.main__welcome-section-text {
+  font-family: var(--cursive);
+  line-height: 95px;
+  font-size: 75px;
+}
+
+.animated {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  max-width: fit-content;
+  border-right: 0.15em solid var(--purple);
+
+  &:not(.invisible) {
+    &.animated-1 {
+      animation: typing 0.5s steps(40, end) forwards,
+        blink-caret 0.75s step-end infinite;
+    }
+
+    &.animated-2,
+    &.animated-3 {
+      animation: typing 1s steps(40, end) forwards,
+        blink-caret 0.75s step-end infinite;
+    }
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--purple);
+  }
+}
