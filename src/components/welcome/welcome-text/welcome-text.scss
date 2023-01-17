@@ -44,6 +44,23 @@
   }
 }
 
+.main__welcome-section-below {
+  &-anim-container {
+    filter: blur(4px);
+    opacity: 0;
+    transform: translateX(-100vw);
+    transition-duration: 1s;
+  }
+  &.aos {
+    .main__welcome-section-below-anim-container {
+      filter: blur(0);
+      opacity: 1;
+      transform: translateX(0);
+      transition-duration: 1s;
+    }
+  }
+}
+
 @keyframes typing {
   from {
     width: 0;

@@ -1,0 +1,16 @@
+---
+type Props = astroHTML.JSX.ButtonHTMLAttributes;
+
+const { class: className, ...props } =
+  Astro.props as astroHTML.JSX.ButtonHTMLAttributes;
+---
+
+<button
+  class:list={[
+    "bg-purple text-white rounded-md duration-300 hover:bg-gray",
+    className,
+  ]}
+  {...props}
+>
+  <slot />
+</button>

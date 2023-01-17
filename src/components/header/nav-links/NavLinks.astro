@@ -5,7 +5,13 @@ const navLinks: Array<string> = ["About", "Projects", "Contact"];
 <nav
   class="header__navigation w-full text-3xl xs:text-xl padded-section text-white gap-x-11"
 >
-  {navLinks.map((link) => <a href="#">{link}</a>)}
+  {
+    navLinks.map((link) => (
+      <a class="duration-300 hover:text-gray" href="#">
+        {link}
+      </a>
+    ))
+  }
 </nav>
 
 <style lang="scss">

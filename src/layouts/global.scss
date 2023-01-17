@@ -9,6 +9,12 @@
   --gray: #1e293b;
   --purple: #7477ff;
   --blue: #0f172a;
+  --light-gray: #cccccc;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 body.nav-opened {
