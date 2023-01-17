@@ -1,0 +1,49 @@
+---
+import BurgerMenu from "../burger/BurgerMenu.astro";
+import NavLinks from "./nav-links/NavLinks.astro";
+---
+
+<header
+  class="header flex justify-end duration-300 h-[70px] overflow-hidden w-full fixed top-0 left-0 border-b-2 border-gray bg-blue py-5 z-20"
+>
+  <NavLinks />
+  <BurgerMenu className="xs:hidden mt-1 mr-[30px]" />
+</header>
+
+<style lang="scss" is:global>
+  @import "../../mixins/media-queries.scss";
+  header {
+    animation: fade-top 1s 1s forwards;
+    filter: blur(4px);
+    opacity: 0;
+    transform: translateY(100vw);
+    @include media-max(xs) {
+      &.nav-opened {
+        height: 100vh;
+        transition-duration: transform 0.3s;
+
+        .header__navigation {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  @keyframes fade-top {
+    from {
+      filter: blur(4px);
+      opacity: 0;
+      transform: translateY(-100vw);
+    }
+
+    to {
+      filter: blur(0);
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  import "./index";
+</script>
