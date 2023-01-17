@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap");
+@import "../mixins/media-queries.scss";
 
 :root {
   --cursive: "Pacifico", cursive;
@@ -11,8 +12,18 @@
 }
 
 .padded-section {
-  padding-left: 100px;
-  padding-right: 100px;
-  max-width: 1235px;
+  max-width: 1335px;
   margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  @include media-min(md) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @include media-min(lg) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }

@@ -4,9 +4,12 @@ import WelcomeText from "./welcome-text/WelcomeText.astro";
 
 <section class="main__welcome-section bg-blue text-white">
   <div
-    class="main__welcome-section-container padded-section flex justify-between"
+    class="main__welcome-section-container padded-section flex flex-wrap md:flex-nowrap items-center justify-between gap-20"
   >
-    <WelcomeText />
+    <WelcomeText className="flex-0 basis-full mb-8 md:mb-0 md:basis-1/2" />
+    <div class="main__welcome-section-img-wrap flex-0 basis-full md:basis-1/2">
+      <img class="w-full max-w-full" src="/hero-img.svg" alt="" />
+    </div>
   </div>
 </section>
 

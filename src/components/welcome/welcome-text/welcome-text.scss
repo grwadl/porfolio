@@ -1,7 +1,25 @@
+@import "../../../mixins/media-queries.scss";
+
 .main__welcome-section-text {
   font-family: var(--cursive);
   line-height: 95px;
-  font-size: 75px;
+  font-size: 45px;
+
+  @include media-min(sm) {
+    font-size: 75px;
+  }
+
+  @include media-between(md, lg) {
+    font-size: 45px;
+  }
+
+  @include media-min(lg) {
+    font-size: 55px;
+  }
+
+  @include media-min(xl) {
+    font-size: 75px;
+  }
 }
 
 .animated {
