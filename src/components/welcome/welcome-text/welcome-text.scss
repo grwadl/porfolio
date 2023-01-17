@@ -32,8 +32,8 @@
 
   &:not(.invisible) {
     &.animated-1 {
-      animation: typing 0.5s steps(40, end) forwards,
-        blink-caret 0.75s step-end infinite;
+      animation: typing 1s steps(100, end) forwards,
+        blink-caret 0.25s step-end infinite;
     }
 
     &.animated-2,

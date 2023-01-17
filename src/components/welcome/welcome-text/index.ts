@@ -1,20 +1,28 @@
-export const textLinesNodes: NodeListOf<HTMLSpanElement> =
-  document.querySelectorAll(".main__welcome-section-text-line");
+document.onreadystatechange = () => {
+  if (document.readyState !== "complete") return;
 
-const [first, second, third] = textLinesNodes;
+  const textLinesNodes: NodeListOf<HTMLSpanElement> = document.querySelectorAll(
+    ".main__welcome-section-text-line"
+  );
 
-setTimeout(() => {
-  first?.classList.remove("invisible");
-}, 200);
+  const [first, second, third] = textLinesNodes;
 
-setTimeout(() => {
-  first?.classList.remove("animated");
-  second?.classList.remove("invisible");
-  second?.classList.add("animated");
-}, 700);
+  setTimeout(() => {
+    first?.classList.remove("invisible");
+    first?.classList.add("animated");
+  }, 400);
 
-setTimeout(() => {
-  second?.classList.remove("animated");
-  third?.classList.remove("invisible");
-  third?.classList.add("animated");
-}, 2000);
+  setTimeout(() => {
+    first?.classList.remove("animated");
+    second?.classList.remove("invisible");
+    second?.classList.add("animated");
+  }, 700);
+
+  setTimeout(() => {
+    second?.classList.remove("animated");
+    third?.classList.remove("invisible");
+    third?.classList.add("animated");
+  }, 2000);
+};
+
+export {};
