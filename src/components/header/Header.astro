@@ -1,11 +1,31 @@
 ---
-const navLinks: Array<string> = ["About", "Projects", "Contact"];
+import BurgerMenu from "../burger/BurgerMenu.astro";
+import NavLinks from "./nav-links/NavLinks.astro";
 ---
 
-<header class="header w-full bg-blue">
-  <nav
-    class="header__navigation flex justify-end padded-section text-white lg:py-5 lg:gap-x-11"
-  >
-    {navLinks.map((link) => <a href="#">{link}</a>)}
-  </nav>
+<header
+  class="header flex justify-end duration-300 h-[70px] overflow-hidden w-full fixed top-0 left-0 border-b-2 border-gray bg-blue py-5"
+>
+  <NavLinks />
+  <BurgerMenu className="xs:hidden mt-1 mr-[30px]" />
 </header>
+
+<style lang="scss" is:global>
+  @import "../../mixins/media-queries.scss";
+  @include media-max(xs) {
+    header {
+      &.nav-opened {
+        height: 100vh;
+        transition-duration: transform 0.3s;
+
+        .header__navigation {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+</style>
+
+<script>
+  import "./index";
+</script>

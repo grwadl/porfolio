@@ -9,6 +9,9 @@ module.exports = {
       blue: "#0f172a",
       white: "#fff",
     },
+    screens: {
+      xs: "480px",
+    },
   },
   plugins: [],
 };

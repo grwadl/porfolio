@@ -1,0 +1,29 @@
+---
+type Props = {
+  className?: string;
+};
+
+const { className } = Astro.props as Props;
+---
+
+<h1 class:list={["main__welcome-section-text text-white", className]}>
+  <span class="main__welcome-section-text-line invisible animated animated-1"
+    >Hi,</span
+  >
+  <br />
+  <span class="main__welcome-section-text-line invisible animated-2"
+    >I am <span class="text-purple">V</span>adym,</span
+  >
+  <br />
+  <span class="main__welcome-section-text-line invisible animated-3"
+    >Web developer</span
+  >
+</h1>
+
+<style lang="scss">
+  @import "./welcome-text.scss";
+</style>
+
+<script>
+  import "./index";
+</script>
