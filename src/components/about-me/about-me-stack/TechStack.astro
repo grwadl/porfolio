@@ -1,0 +1,20 @@
+---
+import type { TechIcon } from "../types";
+import TechStackIcon from "./TechStackIcon.astro";
+
+type Props = {
+  icons: TechIcon[];
+  title: string;
+};
+
+const { icons, title } = Astro.props as Props;
+---
+
+<h4
+  class="main__about-me-wrapper-left-side-tech-title text-lg mt-8 mb-3 font-bold"
+>
+  {title}
+</h4>
+<div class="main__about-me-tech-stack flex flex-wrap gap-2">
+  {icons.map((icon) => <TechStackIcon {...icon} />)}
+</div>
