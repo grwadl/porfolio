@@ -15,13 +15,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install 🔧
-        run: npm install
+      - name: Install 🔧 Build 🏗️
+        uses: withastro/action@v0
 
-      - name: Build 🏗️
-        run: npm run build
       - name: Deploy to GH Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.TOKEN }}
-          publish_dir: dist
+          publish_dir: ./dist
