@@ -26,6 +26,6 @@ export const backedIcons: TechIcon[] = [
     href: "https://www.fastify.io/",
     src: "https://www.fastify.io/images/fastify-logo-inverted.2180cc6b1919d47a.png",
     alt: "Fastify",
-    className: "w-full h-9",
+    className: "w-full max-w-[118px] h-9",
   },
 ];
