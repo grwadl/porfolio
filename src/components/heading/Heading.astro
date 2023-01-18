@@ -1,0 +1,26 @@
+---
+type Props = astroHTML.JSX.HTMLAttributes;
+
+const { class: className, ...props } = Astro.props as Props;
+---
+
+<h2
+  class:list={["text-3xl heading-article text-white relative", className]}
+  {...props}
+>
+  <slot />
+</h2>
+
+<style lang="scss">
+  .heading-article {
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 6px;
+      background-color: var(--purple);
+      bottom: -10px;
+      left: 0;
+    }
+  }
+</style>

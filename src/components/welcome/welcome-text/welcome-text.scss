@@ -1,4 +1,5 @@
 @import "../../../mixins/media-queries.scss";
+@import "../../../mixins/aos.scss";
 
 .main__welcome-section-text {
   font-family: var(--cursive);
@@ -32,8 +33,8 @@
 
   &:not(.invisible) {
     &.animated-1 {
-      animation: typing 0.5s steps(40, end) forwards,
-        blink-caret 0.75s step-end infinite;
+      animation: typing 1s steps(100, end) forwards,
+        blink-caret 0.25s step-end infinite;
     }
 
     &.animated-2,
@@ -46,17 +47,11 @@
 
 .main__welcome-section-below {
   &-anim-container {
-    filter: blur(4px);
-    opacity: 0;
-    transform: translateX(-100vw);
-    transition-duration: 1s;
+    @include fade-left-init;
   }
   &.aos {
     .main__welcome-section-below-anim-container {
-      filter: blur(0);
-      opacity: 1;
-      transform: translateX(0);
-      transition-duration: 1s;
+      @include fade-x-anim;
     }
   }
 }
