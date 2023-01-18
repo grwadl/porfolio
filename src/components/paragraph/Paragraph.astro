@@ -1,0 +1,9 @@
+---
+type Props = astroHTML.JSX.HTMLAttributes;
+
+const { class: className, ...props } = Astro.props as Props;
+---
+
+<p class:list={["text-lg", className]} {...props}>
+  <slot />
+</p>
