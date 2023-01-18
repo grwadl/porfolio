@@ -1,11 +1,12 @@
 ---
 import Heading from "../heading/Heading.astro";
 import AnimatedOnScroll from "../observer/AnimatedOnScroll.astro";
+import Paragraph from "../paragraph/Paragraph.astro";
 import TechStack from "./about-me-stack/TechStack.astro";
 import { backedIcons, frontendIcons } from "./mock";
 ---
 
-<section class="main__about-me bg-gray">
+<section class="main__about-me bg-gray" id="about">
   <div
     class="main__about-me-wrapper padded-section flex flex-wrap gap-20 md:flex-nowrap text-white"
   >
@@ -14,11 +15,11 @@ import { backedIcons, frontendIcons } from "./mock";
     >
       <div class="main__about-me-wrapper-left-side-animation w-full">
         <Heading class="max-w-fit">About me</Heading>
-        <p class="main__about-me-wrapper-left-side-article mt-14">
+        <Paragraph class="main__about-me-wrapper-left-side-article mt-14">
           I'm a self-taught Web-developer and second-year student of the
           Software Engineering faculty. My leading technologies are TS/JS,
           React, Express, Nest, Astro, and HTML/CSS.
-        </p>
+        </Paragraph>
         <div class="main__about-me-wrapper-left-side-tech">
           <TechStack
             title="Frontend technologies I've worked with"

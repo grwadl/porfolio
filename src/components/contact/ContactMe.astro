@@ -1,0 +1,48 @@
+---
+import Heading from "../heading/Heading.astro";
+import AnimatedOnScroll from "../observer/AnimatedOnScroll.astro";
+import Paragraph from "../paragraph/Paragraph.astro";
+---
+
+<section class="main__contact-me bg-gray py-36" id="contact">
+  <AnimatedOnScroll class="main__contact-me-container padded-section">
+    <div class="main__contact-me-anim-wrapper flex flex-col gap-9 items-center">
+      <Heading>Contact me</Heading>
+      <Paragraph class="text-white max-w-lg text-center leading-9">
+        I want to be part of a responsible, professional team, building exciting
+        products. I'm always open to new chances to learn something new and want
+        continue exploring web.
+      </Paragraph>
+      <div
+        class="main__contact-me-links flex flex-col items-center text-white text-lg max-w-xs"
+      >
+        <a
+          class="main__contact-me-links-email hover:text-blue duration-300"
+          href="mailto:youngwwad@gmail.com"
+          ><span class="font-bold mr-1">Email:</span>youngwwad@gmail.com</a
+        >
+        <a
+          class="main__contact-me-links-phone hover:text-blue duration-300 mt-3"
+          href="tel:+380660800552"
+          ><span class="font-bold mr-1">Phone:</span>+380660800552</a
+        >
+      </div>
+    </div>
+  </AnimatedOnScroll>
+</section>
+
+<style lang="scss">
+  @import "../../mixins/aos.scss";
+
+  .main__contact-me-container {
+    .main__contact-me-anim-wrapper {
+      @include fade-right-init;
+    }
+
+    &.aos {
+      .main__contact-me-anim-wrapper {
+        @include fade-x-anim;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,88 @@
+---
+import Button from "../buttons/Button.astro";
+import Heading from "../heading/Heading.astro";
+import AnimatedOnScroll from "../observer/AnimatedOnScroll.astro";
+import Paragraph from "../paragraph/Paragraph.astro";
+import { projects } from "./mock";
+import ProjectsList from "./projects-list/ProjectsList.astro";
+---
+
+<section class="main__projects py-36 bg-blue text-white" id="projects">
+  <div class="padded-section">
+    <AnimatedOnScroll class="main__projects-text">
+      <div class="main__projects-text-anim">
+        <Heading class="mb-14">Projects</Heading>
+        <Paragraph class="mb-10">
+          Here's some of my most recent projects
+        </Paragraph>
+      </div>
+    </AnimatedOnScroll>
+    <AnimatedOnScroll class:list="main__projects-project-list">
+      <ProjectsList class="w-full projects-anim-wrap" projects={projects} />
+    </AnimatedOnScroll>
+    <AnimatedOnScroll class="explore-btn-anim">
+      <a
+        class="block explore-btn mt-10"
+        href="https://github.com/grwadl?tab=repositories"
+        target="_blank"
+      >
+        <Button class="py-4 px-8 text-lg">Explore more</Button>
+      </a>
+    </AnimatedOnScroll>
+  </div>
+</section>
+
+<style lang="scss" is:global>
+  @import "../../mixins/aos.scss";
+  .main__projects-text {
+    &-anim {
+      @include fade-right-init;
+    }
+
+    &.aos {
+      .main__projects-text-anim {
+        @include fade-x-anim;
+      }
+    }
+  }
+
+  .main__projects-project-list {
+    .projects-anim-wrap {
+      .project {
+        @include fade-left-init;
+      }
+    }
+
+    &.aos {
+      .projects-anim-wrap {
+        .project {
+          @include fade-x-anim;
+
+          &:nth-child(1) {
+            transition-delay: 100ms;
+          }
+
+          &:nth-child(2) {
+            transition-delay: 250ms;
+          }
+
+          &:nth-child(3) {
+            transition-delay: 350ms;
+          }
+        }
+      }
+    }
+  }
+
+  .explore-btn-anim {
+    .explore-btn {
+      @include fade-right-init;
+    }
+
+    &.aos {
+      .explore-btn {
+        @include fade-x-anim;
+      }
+    }
+  }
+</style>

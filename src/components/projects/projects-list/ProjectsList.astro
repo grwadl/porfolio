@@ -1,0 +1,26 @@
+---
+import ProjectItem from "../project-item/ProjectItem.astro";
+import type { ProjectItem as Project } from "../types";
+
+type Props = {
+  projects: Project[];
+} & astroHTML.JSX.HTMLAttributes;
+
+const { projects, class: className, ...props } = Astro.props as Props;
+---
+
+<div
+  class:list={[
+    "projects-list flex flex-wrap gap-10 md:flex-nowrap ",
+    className,
+  ]}
+  {...props}
+>
+  {
+    projects.map((project) => (
+      <ProjectItem class="flex-0 basis-full md:basis-1/3" {...project} />
+    ))
+  }
+</div>
+
+<style lang="scss"></style>

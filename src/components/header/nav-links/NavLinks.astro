@@ -7,9 +7,12 @@ const navLinks: Array<string> = ["About", "Projects", "Contact"];
 >
   {
     navLinks.map((link) => (
-      <a class="duration-300 hover:text-gray" href="#">
+      <div
+        class="duration-300 hover:text-gray"
+        data-scroll-to={link.toLowerCase()}
+      >
         {link}
-      </a>
+      </div>
     ))
   }
 </nav>
