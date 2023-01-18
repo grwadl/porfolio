@@ -1,0 +1,77 @@
+---
+import Heading from "../heading/Heading.astro";
+import AnimatedOnScroll from "../observer/AnimatedOnScroll.astro";
+import TechStack from "./about-me-stack/TechStack.astro";
+import { backedIcons, frontendIcons } from "./mock";
+---
+
+<section class="main__about-me bg-gray">
+  <div
+    class="main__about-me-wrapper padded-section flex flex-wrap gap-20 md:flex-nowrap text-white"
+  >
+    <AnimatedOnScroll
+      class="main__about-me-wrapper-left-side flex-0 basis-full md:basis-1/2"
+    >
+      <div class="main__about-me-wrapper-left-side-animation w-full">
+        <Heading class="max-w-fit">About me</Heading>
+        <p class="main__about-me-wrapper-left-side-article mt-14">
+          I'm a self-taught Web-developer and second-year student of the
+          Software Engineering faculty. My leading technologies are TS/JS,
+          React, Express, Nest, Astro, and HTML/CSS.
+        </p>
+        <div class="main__about-me-wrapper-left-side-tech">
+          <TechStack
+            title="Frontend technologies I've worked with"
+            icons={frontendIcons}
+          />
+          <TechStack
+            title="Backend technologies I've worked with"
+            icons={backedIcons}
+          />
+        </div>
+      </div>
+    </AnimatedOnScroll>
+
+    <AnimatedOnScroll
+      class="main__about-me-wrapper-right-side flex-0 basis-full md:basis-1/2"
+    >
+      <img class="about-me-img w-full" src="/about-img.svg" alt="about me" />
+    </AnimatedOnScroll>
+  </div>
+</section>
+
+<style lang="scss">
+  @import "../../mixins/aos.scss";
+  .main__about-me {
+    padding: 96px 0 115px 0;
+
+    &-wrapper-left-side-article {
+      font-size: 18px;
+      line-height: 36px;
+    }
+  }
+
+  .main__about-me-wrapper-left-side {
+    &-animation {
+      @include fade-left-init;
+    }
+
+    &.aos {
+      .main__about-me-wrapper-left-side-animation {
+        @include fade-x-anim;
+      }
+    }
+  }
+
+  .main__about-me-wrapper-right-side {
+    .about-me-img {
+      @include fade-right-init;
+    }
+
+    &.aos {
+      .about-me-img {
+        @include fade-x-anim;
+      }
+    }
+  }
+</style>

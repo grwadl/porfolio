@@ -1,0 +1,19 @@
+@mixin fade-right-init {
+  filter: blur(4px);
+  opacity: 0;
+  transform: translateX(100vw);
+  transition-duration: 1s;
+}
+
+@mixin fade-x-anim {
+  filter: blur(0);
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@mixin fade-left-init {
+  filter: blur(4px);
+  opacity: 0;
+  transform: translateX(-100vw);
+  transition-duration: 1s;
+}

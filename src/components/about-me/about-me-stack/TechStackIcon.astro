@@ -1,0 +1,9 @@
+---
+import type { TechIcon } from "../types";
+
+const { alt, href, src, className = "h-full w-9" } = Astro.props as TechIcon;
+---
+
+<a href={href} target="_blank" rel="noreferrer"
+  ><img src={src} class={className} alt={alt} /></a
+>

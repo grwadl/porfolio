@@ -11,6 +11,5 @@ export const intersectionObserver = new IntersectionObserver(callback, {
 });
 
 const animateEntries = document.querySelectorAll("[data-aos]");
-console.log(animateEntries);
 
 animateEntries.forEach((entry) => intersectionObserver.observe(entry));

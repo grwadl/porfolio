@@ -1,4 +1,5 @@
 @import "../../../mixins/media-queries.scss";
+@import "../../../mixins/aos.scss";
 
 .main__welcome-section-text {
   font-family: var(--cursive);
@@ -46,17 +47,11 @@
 
 .main__welcome-section-below {
   &-anim-container {
-    filter: blur(4px);
-    opacity: 0;
-    transform: translateX(-100vw);
-    transition-duration: 1s;
+    @include fade-left-init;
   }
   &.aos {
     .main__welcome-section-below-anim-container {
-      filter: blur(0);
-      opacity: 1;
-      transform: translateX(0);
-      transition-duration: 1s;
+      @include fade-x-anim;
     }
   }
 }

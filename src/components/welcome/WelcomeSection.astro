@@ -17,22 +17,18 @@ import WelcomeText from "./welcome-text/WelcomeText.astro";
 </section>
 
 <style lang="scss">
+  @import "../../mixins/aos.scss";
   .main__welcome-section {
     padding: 115px 0 130px 0;
   }
 
   .main__welcome-section-img-wrap {
     img {
-      filter: blur(4px);
-      opacity: 0;
-      transform: translateX(100vw);
-      transition-duration: 1s;
+      @include fade-right-init;
     }
     &.aos {
       img {
-        filter: blur(0);
-        opacity: 1;
-        transform: translateX(0);
+        @include fade-x-anim;
       }
     }
   }
