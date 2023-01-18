@@ -5,7 +5,10 @@ const { class: className, ...props } = Astro.props as Props;
 ---
 
 <h2
-  class:list={["text-3xl heading-article text-white relative", className]}
+  class:list={[
+    "text-3xl heading-article text-white relative w-fit font-bold",
+    className,
+  ]}
   {...props}
 >
   <slot />

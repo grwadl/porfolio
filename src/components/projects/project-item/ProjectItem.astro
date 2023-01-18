@@ -1,0 +1,37 @@
+---
+import Paragraph from "../../paragraph/Paragraph.astro";
+import type { ProjectItem } from "../types";
+
+type Props = ProjectItem & astroHTML.JSX.AnchorHTMLAttributes;
+
+const { href, src, desc, class: className, ...props } = Astro.props as Props;
+---
+
+<a
+  target="_blank"
+  {...props}
+  class:list={["project cursor-pointer relative", className]}
+  href={href}
+>
+  <img class="w-full" src={src} alt="project z-[1]" />
+  <div
+    class="project-hover flex items-center justify-center w-full h-full top-0 left-0 duration-300 absolute p-2 z-[2]"
+  >
+    {desc && <Paragraph class="font-bold text-center">{desc}</Paragraph>}
+  </div>
+</a>
+
+<style lang="scss">
+  .project {
+    &-hover {
+      opacity: 0;
+    }
+
+    &:hover {
+      .project-hover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+</style>
