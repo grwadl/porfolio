@@ -2,5 +2,6 @@
 
 **Stack of technologies used:**
 - AstroJS
+- Typescript
 - SCSS
 - Tailwind
